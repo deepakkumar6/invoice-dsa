@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'invoice/main.css' %}">
+</head>
+<body>
+    {% comment %} <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">About Us</a>
+            <a href="#">Privacy polacy</a>
+            <a href="#">about us</a>
+            <a href="#">All products</a>
+           <input type="search" name="search" id="search" placeholder="search Here">
+        </nav>
+    </header> {% endcomment %}
+    {% block element %}
+    {% endblock element %}
+</body>
+</html>

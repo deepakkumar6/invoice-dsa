@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+}
+nav{
+    background-color: white;
+    padding: 23px;
+}
+a{
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+    font-size: 18px;
+    margin: 5px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+a:hover{
+    color: red;
+}
+input[type='search']{
+    
+    right: 2%;
+    position: absolute;
+    padding: 0 10px;
+    border-radius: 15px;
+    border: 2px solid gray;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    outline: none;
+
+
+}

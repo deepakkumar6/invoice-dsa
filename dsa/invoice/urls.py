@@ -9,7 +9,7 @@ urlpatterns = [
 
     path('items/', invoice_views.items,name='items'),
     path('items/new/', invoice_views.items_new,name='items_new'),
-    path('items_post/', invoice_views.items_post,name='items_post'),
+    path('items_new_post/', invoice_views.items_new_post,name='items_new_post'),
 
     path('estimate/', invoice_views.estimate,name='estimate'),
     path('estimate/new/', invoice_views.estimate_new,name='estimate_new'),
