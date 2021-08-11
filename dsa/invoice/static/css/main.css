@@ -1,0 +1,9 @@
+.maincontainer{
+    display:flex;
+    align-items: center;
+    text-align: center;
+    color:red;
+}
+.sidebar{
+    width:10%;
+}

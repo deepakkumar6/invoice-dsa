@@ -1,11 +1,11 @@
 body{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     height: 100vh;
 
 }
 nav{
-    background-color: white;
+    background-color: red;
     padding: 23px;
 }
 a{
@@ -14,11 +14,9 @@ a{
     color: black;
     font-size: 18px;
     margin: 5px;
-    font-family: 'Times New Roman', Times, serif;
-
 }
 a:hover{
-    color: red;
+    color: blue;
 }
 input[type='search']{
     
