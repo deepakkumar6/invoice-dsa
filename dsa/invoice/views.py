@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse
 import smtplib
+import os
 # Create your views here.
 # @@@@@@@@@@@@@@   indexes @@@@@@@@@@@@
 # dashboard 
@@ -138,13 +139,20 @@ def deliveryChallansNew_post(request):
 
     return render(request,'invoice/deliveryChallansNew.html')
 
-def newInvoice(request):
+
+def invoices(request):
+
+    # this is the page where all the invoices present
+
+    return render(request,"invoice/invoices.html")
+
+def invoices_new(request):
 
     # this is the main thing we need to handle - our invoice 
 
-    return render(request,'invoice/newInvoice.html')
+    return render(request,'invoice/invoices_new.html')
 
-def newInvoice_post(request):
+def newinvoice_post(request):
 
     # this is the main thing we need to handle - our invoice 
     if request.method == "POST":
@@ -163,8 +171,9 @@ def newInvoice_post(request):
         # we can access this email through database 
         admin_email = 'deepakkumar006007@gmail.com'
         gmail_user = admin_email 
-        gmail_password = "password"
-        send_to = 'xyz@gmail.com' # we can access the customer password from db 
+        gmail_password = os.environ["EMAIL_APP_PASSWORd"]
+
+        send_to = 'b18ec035@nitm.ac.in' # we can access the customer password from db 
         message = "HI - This is invoice" # we can also send html templates 
         try:
             server = smtplib.SMTP('smtp.gmail.com', 587)

@@ -1,0 +1,46 @@
+{% extends "invoice/base.html" %}
+{% block element %}
+    <h1>This is invoice page (only for debug)</h1>
+    <form action={% url 'newinvoice_post' %} method="POST">
+        {% csrf_token %}
+        <div>
+            Customer Name*  <input type="text" name="customer_name" id="">
+        </div>
+        <div>
+            Invoice#* <input type="text" name="invoice_number" id="">
+        </div>
+        <div>
+
+            Order Number <input type="text" name="order_number" id="">
+        </div>
+        <div>
+
+            Invoice Date <input type="date" name="invoice_date" id="">
+        </div>
+        <div>
+
+            Terms <input type="text" name="terms" id="">
+        </div>
+        <div>
+
+            Due Date <input type="date" name="terms" id="">
+        </div>
+        <div>
+
+            SalesPerson <input type="text" name="salesperson" id="">
+        </div>
+        <div>
+
+            Subjects <textarea name="subjects" id="" cols="30" rows="10"></textarea>
+        </div>
+        <!-- there are lot of options so leave  -->
+        <div>
+
+            <button type="submit">Save As Draft</button>
+            <button type="submit">Save and Send </button>
+            <button type="submit">Save and Print</button>
+            <button type="submit">Save and Share later</button>
+            
+        </div>
+    </form>
+{% endblock %}

@@ -25,14 +25,14 @@
                 <li><a>Items</a></li>
                 <li><a>Estimates</a></li>
                 <li><a>Delivery Challans</a></li>
-                <li><a>Invoices</a></li>
+                <li><a href={% url 'invoices' %}>Invoices</a></li>
                 <li><a>Payment Received</a></li>
                 <li><a>Expences</a></li>
                 <li><a>TimeSheet</a></li>
                 <li><a>Reports</a></li>
             </ul>
         </div>
-        <div>
+        <div class="container">
             {% block element %}
             {% endblock element%}
         </div>
