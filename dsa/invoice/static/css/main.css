@@ -1,9 +1,32 @@
+body{
+    margin:0;
+    padding:0;
+}
 .maincontainer{
+    margin:0;
+    padding:0;
     display:flex;
     align-items: center;
     text-align: center;
-    color:red;
 }
 .sidebar{
-    width:10%;
+    margin:2px auto 5px 0px;
+    width:12%;
+    border: 2px solid black;
+    text-align: left;
+    background-color: rgb(43, 38, 38);
+    color:white;
+}
+.sidebarlist{
+    margin:2px auto 2px 0px;
+    padding: 10px auto 10px 0px;
+    list-style: none;
+    align-items: center;
+    height: 100vh;
+}
+li{
+    margin:10px 0px 10px 0px;
+    padding:10px auto 10px auto;
+    font-size: 18px;
+    font-weight: 500;
 }
