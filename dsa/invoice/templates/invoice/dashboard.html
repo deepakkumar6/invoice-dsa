@@ -1,4 +1,16 @@
 {% extends "invoice/base.html" %}
 {% block element %}
-    <p> This is the dashboard page </p>
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+    </div>
+    <div class="d_container">
+        <div class="d_1">
+            <div>
+                <p style="text-align:left;">Total Receivables <i>?</i></p> 
+            </div>
+            <div style="margin:auto;">
+                <a style="text-align: right;" href="{% url 'invoices' %}">ADD INVOICES</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

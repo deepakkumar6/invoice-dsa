@@ -1,31 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This will help us to store the details of the particular items</h1>
-    <form action="items_new_post" method="POST">
+{% extends "invoice/base.html" %}
+{% block element %}
+    <h1> All Items </h1>
+    <form action="{% url 'items_new_post' %}" method="POST">
+        {% csrf_token %}
         <!-- Type 
         <input type="radio" name="goods" id="type_of_goods">
         <input type="radio" name="services" id="type_of_goods"> -->
+        <div>
+            Name : 
+            <input type="text" name="product_name" id="">
+        </div>
+        <div>
+            Unit : 
+            <input type="number" name="number_of_product" id="">
+        </div>
+        <div>
+            Selling Price :
+            <input type="number" name="selling_price" id="">
+        </div>
+        <div>
+            Project Desc : 
+            <textarea name="product_desc" id="" cols="10" rows="10">
+                Write Product Description
+            </textarea>
+        </div>
+        <div>
+            <button type="submit">Save</button>
+            <button><a href="{% url 'items' %}">Canceal</a></button>
+        </div>
 
-        Name 
-        <input type="text" name="product_name" id="">
-        Unit 
-        <input type="number" name="number_of_product" id="">
-        Selling Price 
-        <input type="number" name="selling_price" id="">
-        <textarea name="product_desc" id="" cols="30" rows="10">
-            Write Product Description
-        </textarea>
-
-        <button type="submit">Save</button>
-        <button type="submit">Canceal</button>
     </form>
-</body>
-
-</html>
+{% endblock element %}

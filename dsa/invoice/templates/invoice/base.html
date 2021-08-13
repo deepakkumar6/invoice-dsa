@@ -14,7 +14,6 @@
     <header>
         <nav>
             <p>This is the nav bar </p>
-            
         </nav>
     </header>
     <div class="maincontainer">
@@ -22,11 +21,11 @@
             <ul class="sidebarlist">
                 <li><a href={% url 'dashboard' %}>Dashboard</a></li>
                 <li><a href={% url 'customers' %}>Customers</a></li>
-                <li><a>Items</a></li>
-                <li><a>Estimates</a></li>
-                <li><a>Delivery Challans</a></li>
+                <li><a href={% url 'items' %}>Items</a></li>
+                <li><a href={% url 'estimate' %}>Estimates</a></li>
+                <li><a href={% url 'deliveryChallans' %}>Delivery Challans</a></li>
                 <li><a href={% url 'invoices' %}>Invoices</a></li>
-                <li><a>Payment Received</a></li>
+                <li><a href={% url 'deliveryChallans' %}>Payment Received</a></li>
                 <li><a>Expences</a></li>
                 <li><a>TimeSheet</a></li>
                 <li><a>Reports</a></li>

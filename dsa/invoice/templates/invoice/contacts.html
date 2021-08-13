@@ -1,30 +1,44 @@
 {% extends "invoice/base.html" %}
 {% block element %}
     <h1>This is contacts template file (only for debug)</h1>
-    <form action="constacts_post" method="POST">
+    <form action="{% url 'contacts_post' %}" method="POST">
+        {% csrf_token %}
 <!--         
         Customer Type 
         Individual
         <input type="radio" name="individual" id="">
         <input type="radio" name="individual" id=""> -->
-
-        Primary Contact 
-        <input type="text" name="sirname" id="">
-        <input type="text" name="firstname" id="">
-        <input type="text" name="lastname" id="">
-        Company Name 
-        <input type="text" name="companyname" id="">
-        Customer display name 
-        <input type="text" name="displayname" id="">
-        customer email 
-        <input type="email" name="customer_email" id="">
-        Customer Phone 
-        <input type="number" name="phonenumber" id="">
-        <input type="number" name="mobilenumber" id="">
-        Website
-        <input type="url" name="customerwebsite" id="">
-        there are lot of option there
-        <button type="submit">Save</button>
-        <button type="submit">Canceal</button>
+        <div>
+            Primary Contact 
+            Sir Name : <input type="text" name="sirname" id="">
+            First Name : <input type="text" name="firstname" id="">
+            Last Name : <input type="text" name="lastname" id="">
+        </div>
+        <div>
+            Company Name 
+            <input type="text" name="companyname" id="">
+        </div>
+        <div>
+            Customer display name 
+            <input type="text" name="displayname" id="">
+        </div>
+        <div>
+            customer email 
+            <input type="email" name="customer_email" id="">
+        </div>
+        <div>
+            Customer Phone 
+            <input type="number" name="phonenumber" id="">
+            <input type="number" name="mobilenumber" id="">
+        </div>
+        <div>
+            Website
+            <input type="url" name="customerwebsite" id="">
+            <!-- there are lot of option there -->
+        </div>
+        <div>
+            <button type="submit">Save</button>
+            <button><a href="{% url 'customers' %}">Canceal</a></button>
+        </div>
     </form>
 {% endblock %}

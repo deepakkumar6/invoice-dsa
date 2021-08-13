@@ -24,9 +24,4 @@ urlpatterns = [
     path('invoices_new/', invoice_views.invoices_new,name='invoices_new'),
     path('newinvoice_post/', invoice_views.newinvoice_post,name='newinvoice_post'),
 
-
-
-
-
-    
 ]

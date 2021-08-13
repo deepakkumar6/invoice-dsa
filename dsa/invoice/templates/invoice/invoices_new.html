@@ -1,46 +1,67 @@
 {% extends "invoice/base.html" %}
 {% block element %}
-    <h1>This is invoice page (only for debug)</h1>
-    <form action={% url 'newinvoice_post' %} method="POST">
-        {% csrf_token %}
-        <div>
-            Customer Name*  <input type="text" name="customer_name" id="">
-        </div>
-        <div>
-            Invoice#* <input type="text" name="invoice_number" id="">
-        </div>
-        <div>
+<form action={% url 'newinvoice_post' %} method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="idinvoice_new1">Customer Name*</label>
+        <input type="text" id="idinvoice_new1" name="customer_name" placeholder="Your name.." required>
+    </div>
 
-            Order Number <input type="text" name="order_number" id="">
-        </div>
-        <div>
+    <div>
+        <label for="idinvoice_new2">Invoice#*</label>
+        <input type="text" id="idinvoice_new2" name="invoice_number" placeholder="Invoice Number.." required>
 
-            Invoice Date <input type="date" name="invoice_date" id="">
-        </div>
-        <div>
+    </div>
 
-            Terms <input type="text" name="terms" id="">
-        </div>
-        <div>
+    <div>
+        <label for="idinvoice_new3">Order Name*</label>
+        <input type="text" id="idinvoice_new3" name="order_number" placeholder="Order Number.." required>
 
-            Due Date <input type="date" name="terms" id="">
-        </div>
-        <div>
+    </div>
 
-            SalesPerson <input type="text" name="salesperson" id="">
-        </div>
-        <div>
+    <div>
+        <label for="idinvoice_new4">Enter Invoice Date*</label>
+        <input type="date" id="idinvoice_new4" name="invoice_date" placeholder="Enter Date" required>
+    </div>
 
-            Subjects <textarea name="subjects" id="" cols="30" rows="10"></textarea>
-        </div>
-        <!-- there are lot of options so leave  -->
-        <div>
+    <div>
+        <label for="idinvoice_new5">Terms*</label>
+        <input type="text" id="idinvoice_new5" name="terms" placeholder="Terms.." required>
+    </div>
 
-            <button type="submit">Save As Draft</button>
-            <button type="submit">Save and Send </button>
-            <button type="submit">Save and Print</button>
-            <button type="submit">Save and Share later</button>
-            
-        </div>
-    </form>
-{% endblock %}
+    <div>
+        <label for="idinvoice_new6">Due Date*</label>
+        <input type="date" id="idinvoice_new6" name="due_date" placeholder="Due Date.." required>
+    </div>
+
+    <div>
+        <label for="idinvoice_new7">SalesPerson*</label>
+        <input type="text" id="idinvoice_new7" name="salesperson" placeholder="salesperson" required>
+    </div>
+
+
+    <div>
+            Subjects <textarea name="subjects" id="" cols="20" rows="1" required></textarea>
+    </div>
+
+    <div>
+        <label for="idinvoice_new9">Email*</label>
+        <input type="email" id="idinvoice_new9" name="send_to" placeholder="Email" required>
+    
+    </div>
+
+    <!-- there are lot of options, so leave  -->
+    <div>
+        <button type="submit">Save As Draft</button>
+        <input type="submit" value="Save and Send">
+        <!-- <button type="submit">Save and Print</button> -->
+        <!-- <button type="submit">Save and Share later</button>  -->
+        <button><a href="{% url 'invoices' %}">Go To DashBoard</a></button> 
+    </div>
+</form>
+{% endblock element %}
+<!-- <select id="country" name="country">
+    <option value="australia">Australia</option>
+    <option value="canada">Canada</option>
+    <option value="usa">USA</option>
+</select> -->
