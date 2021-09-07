@@ -1,0 +1,116 @@
+/*background color  #f2f2f2 */
+/* body{
+    margin:0px;
+    padding:0px;
+} */
+.hii{
+    font-size: 50px;
+}
+.first{
+    font-size: 200px;
+}
+/* .maincontainer{
+    margin:0px;
+    padding:0px;
+    display:flex;
+    text-align: center;
+} */
+/* .sidebar{
+    margin:0px 0px 5px 0px;
+    width:12%;
+    border: 2px solid black;
+    text-align: left;
+    background-color: rgb(43, 38, 38);
+    color:white;
+} */
+/* .sidebarlist{
+    margin:0px 0px 2px 0px;
+    padding: 10px 0px 10px 0px;
+    list-style: none;
+    align-items: center;
+    height: 100vh;
+} */
+/* li{
+    margin:10px 0px 10px 0px;
+    padding:10px 0px 10px 0px;
+    font-size: 18px;
+    font-weight: 500;
+} */
+/* a{
+    text-decoration: none;
+    color:white;
+}
+div{
+    margin:0px 0px 5px 0px;
+} */
+/* a:hover{
+    color: yellow;
+}
+.container{
+    width: 88%;
+    background-color: #f2f2f2;
+    text-align: left;
+
+} */
+
+/* dashboard styling */
+
+/* .dashboard{
+    border:1px solid red;
+} */
+/* style="color:black;" */
+.dh {
+    color:black;
+}
+/* .dashboard h1{
+    text-align: left;
+    padding:5px 0px 5px 20px;
+    color:black;
+    
+} */
+/* .d_container{
+    width:80%;
+    padding:20px;
+}
+.d_1{
+    margin-top: 10px 0px 0px 10px;
+    display: flex;
+} */
+/* customer styling */
+
+
+/* invoice styling  */
+/* .onelineinput{
+    display: flex;
+    align-items: center;
+    color:yellow;
+} */
+
+/* input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color:red;
+} */
+
+
+/* input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+  
+/* input[type=submit]:hover {
+    background-color:black;
+} */
+
+/* contacts styling  */

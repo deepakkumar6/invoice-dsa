@@ -1,44 +1,84 @@
 {% extends "invoice/base.html" %}
 {% block element %}
-    <h1>This is contacts template file (only for debug)</h1>
+    <div class="contactcontainer">
+    
+    
+    <div class="contacts">
+        <div class="newcustomer">
+            <h1 class="newcustomerheading">New Customers</h1>
+        </div>
+        <div>
+            <p><a href=""> Page Tips</a></p>
+        </div>
+    </div>
     <form action="{% url 'contacts_post' %}" method="POST">
-        {% csrf_token %}
-<!--         
-        Customer Type 
-        Individual
-        <input type="radio" name="individual" id="">
-        <input type="radio" name="individual" id=""> -->
-        <div>
-            Primary Contact 
-            Sir Name : <input type="text" name="sirname" id="">
-            First Name : <input type="text" name="firstname" id="">
-            Last Name : <input type="text" name="lastname" id="">
+        {% csrf_token %}   
+        <div class="doflex">
+
+            <p class="name">Customer Type </p> 
+            <div class="align">
+                <p><input type="radio" id="Business" name="customer_type" value="Business">
+                <label for="Business">Business</label>
+                <input type="radio" id="Individual" name="customer_type" value="Individual">
+                <label for="Individual">Individual</label></p>
+            </div>
+        </div>      
+
+        <div class="doflex">
+            <p class="name">Primary Contact</p> 
+            <div class="names">
+                <input type="text" name="sirname" id="" placeholder="Sir Name">
+            </div>
+            <div class="names">
+                <input type="text" name="firstname" id="" placeholder="First Name">
+            </div>
+            <div class="names">
+                <input type="text" name="lastname" id="" placeholder="Last Name">
+            </div>
         </div>
-        <div>
-            Company Name 
-            <input type="text" name="companyname" id="">
+
+        <div class="doflex">
+            <p class="name">
+                Company Name 
+            </p>
+            <div>
+                <input type="text" name="companyname" id="" placeholder="Company Name">
+            </div>
         </div>
-        <div>
-            Customer display name 
-            <input type="text" name="displayname" id="">
+        <div class="doflex">
+            <p class="name">Customer display name </p>
+            <div><input type="text" name="displayname" id="" placeholder="Display Name"></div>
         </div>
-        <div>
-            customer email 
-            <input type="email" name="customer_email" id="">
+        <div class="doflex">
+            <p class="name">Customer Email</p>
+             <div>
+                 <input type="email" name="customer_email" id="" placeholder="Email">
+             </div>
         </div>
-        <div>
-            Customer Phone 
-            <input type="number" name="phonenumber" id="">
-            <input type="number" name="mobilenumber" id="">
+        <div class="doflex">
+            <p class="name">Customer Phone </p>
+            <div class="names">
+
+                <input type="number" name="phonenumber" id="" placeholder="Work Phone">
+            </div>
+            <div class="names">
+
+                <input type="number" name="mobilenumber" id="" placeholder="Mobile Number">
+            </div>
         </div>
-        <div>
-            Website
-            <input type="url" name="customerwebsite" id="">
+        <div class="doflex">
+            <p class="name">Website</p>
+            <div>
+
+                <input type="url" name="customerwebsite" id="" placeholder="Enter Url">
+            </div>
             <!-- there are lot of option there -->
         </div>
-        <div>
-            <button type="submit">Save</button>
-            <button><a href="{% url 'customers' %}">Canceal</a></button>
+        <div class="doflex">
+            <p class="names"><input type="submit" value="Save and Send"></p>
+            
+            <button class="btn btn1"><a href="{% url 'customers' %}">Canceal</a></button>
         </div>
     </form>
+</div>
 {% endblock %}

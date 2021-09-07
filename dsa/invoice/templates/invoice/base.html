@@ -6,14 +6,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
+    <title>DSA-INVOICE</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <p>This is the nav bar </p>
+    <p class="check">CSS IS WORKING OR NOT</p>
+    <header class="header">
+        <nav class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">DSA-INVOICE</button>
+                <div class="dropdown-content">
+                  <a href="#">DSA-MUSIC</a>
+                  <a href="#">DSA-GAMES</a>
+                  <a href="#">DSA-VIDEOS</a>
+                </div>
+              </div>
+            <div>
+                <ul class="rightnav">
+                    <li><a href="{% url 'invoices' %}">ADD</a></a></li>
+                    <li><a href="">Refress</a></li>
+                    <li>Search</li>
+                    <li>
+                        <button class="user">NONE</button>
+                        <div class="user-content">
+                            <a href="">USER NAME</a>
+                        </div>
+                    </li>
+                    <li>Notification</li>
+                    <li>Settings</li>
+                    <li>User</li>
+                </ul>
+            </div>
+            
         </nav>
     </header>
     <div class="maincontainer">
@@ -33,7 +58,7 @@
         </div>
         <div class="container">
             {% block element %}
-            {% endblock element%}
+            {% endblock element %}
         </div>
     </div>
 

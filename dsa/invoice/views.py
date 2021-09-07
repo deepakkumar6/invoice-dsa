@@ -1,6 +1,11 @@
 from django.shortcuts import render, HttpResponse
 import smtplib
 import os
+# restful 
+from rest_framework.response import Response
+from rest_framework.decorators import api_view 
+import json
+from .models import Customer, Products
 # Create your views here.
 # @@@@@@@@@@@@@@   indexes   @@@@@@@@@@@@
 # dashboard
@@ -34,13 +39,12 @@ def contacts(request):
 
     return render(request, 'invoice/contacts.html')
 
-
 def contacts_post(request):
 
-    # this will help us to save the customers details
+    # Save the customers details in DB
 
     if request.method == "POST":
-        # customer_type = request.POST.get("")
+        customer_type = request.POST.get("customer_type")
         sirname = request.POST.get("sirname")
         firstname = request.POST.get("firstname")
         lastname = request.POST.get("lastname")
@@ -50,15 +54,67 @@ def contacts_post(request):
         phonenumber = request.POST.get("phonenumber")
         mobilenumber = request.POST.get("mobilenumber")
         customerwebsite = request.POST.get("customerwebsite")
-        # sirname = request.POST.get("")
-        # sirname = request.POST.get("")
-
-        # we can save this data to database
-
-        # we can also return this in json form
+        res = {
+            "customer_type":customer_type,
+            "sirname":sirname,
+            "firstname":firstname,
+            "lastname":lastname,
+            "companyname":companyname,
+            "displayname":displayname,
+            "customer_email":customer_email,
+            "phonenumber":phonenumber,
+            "mobilenumber":mobilenumber,
+            "customerwebsite":customerwebsite
+        }
+        cus = Customer(
+            customer_type = customer_type,
+            sirname = sirname,
+            firstname = firstname,
+            lastname = lastname,
+            companyname = companyname,
+            displayname = displayname,
+            customer_email = customer_email,
+            phonenumber = phonenumber,
+            mobilenumber = mobilenumber,
+            customerwebsite = customerwebsite
+        )
+        cus.save()
+        
+        
 
     return render(request, 'invoice/contacts.html')
 
+@api_view(['POST'])
+def contacts_postAPI(request):
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        res = {
+            "customer_type":body["customer_type"],
+            "sirname":body["sirname"],
+            "firstname":body["firstname"],
+            "lastname":body["lastname"],
+            "companyname":body["companyname"],
+            "displayname":body["displayname"],
+            "customer_email":body["customer_email"],
+            "phonenumber":body["phonenumber"],
+            "mobilenumber":body["mobilenumber"],
+            "customerwebsite":body["customerwebsite"]
+        }
+        return Response(res)
+    return Response(res)
+    {
+    "customer_type":"Individual",
+    "sirname":"Mr",
+    "firstname":"Deepak",
+    "lastname":"Kumar",
+    "companyname":"Google",
+    "customer_email":"a@gmail.com",
+    "displayname":"feelme",
+    "phonenumber":"123456",
+    "mobilenumber":"99999999999",
+    "customerwebsite":"https://google.com"
+    }
 
 def items(request):
 
@@ -83,10 +139,30 @@ def items_new_post(request):
         # product_name = request.POST.get("product_name")
         # product_name = request.POST.get("product_name")
 
-        # we can save this data to database
+        prod = Products(
+            product_name = product_name,
+            number_of_product = number_of_product,
+            selling_price = selling_price,
+            product_desc = product_desc
+        )
+
+        prod.save()
 
     return render(request, 'invoice/items_new.html')
 
+@api_view(['POST'])
+def items_new_postAPI(request):
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        res = {
+            "product_name":body["product_name"],
+            "number_of_product":body["number_of_product"],
+            "selling_price":body["selling_price"],
+            "product_desc":body["product_desc"],
+        }
+        return Response(res)
+    return Response
 
 def estimate(request):
 
@@ -219,7 +295,13 @@ def newinvoice_post(request):
 
     return render(request, 'invoice/newInvoice.html')
 
+@api_view(['POST',"GET"])
+def test(request):
+    if request.method == "POST":
+        pass
+    data = {"dummy":10}
 
+    return Response(data)
 # way to send emails
 # if request.method == 'POST':
 #         heading = request.POST.get('heading')

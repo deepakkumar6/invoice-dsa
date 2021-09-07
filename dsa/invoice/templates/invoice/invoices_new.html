@@ -1,64 +1,81 @@
 {% extends "invoice/base.html" %}
 {% block element %}
+<div class="invoicecontainer">
+<div class="doflex contacts">
+    <h1 class="newcustomer">New Invoices</h1>
+    <p>
+        <a href="">Page Tips</a>
+    </p>
+</div>
+
 <form action={% url 'newinvoice_post' %} method="POST">
     {% csrf_token %}
-    <div>
-        <label for="idinvoice_new1">Customer Name*</label>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new1">Customer Name*</label></p>
         <input type="text" id="idinvoice_new1" name="customer_name" placeholder="Your name.." required>
     </div>
 
-    <div>
-        <label for="idinvoice_new2">Invoice#*</label>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new2">Invoice#*</label></p>
         <input type="text" id="idinvoice_new2" name="invoice_number" placeholder="Invoice Number.." required>
 
     </div>
 
-    <div>
-        <label for="idinvoice_new3">Order Name*</label>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new3">Order Name*</label></p>
         <input type="text" id="idinvoice_new3" name="order_number" placeholder="Order Number.." required>
 
     </div>
 
-    <div>
-        <label for="idinvoice_new4">Enter Invoice Date*</label>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new4">Invoice Date*</label></p>
+        
         <input type="date" id="idinvoice_new4" name="invoice_date" placeholder="Enter Date" required>
     </div>
-
-    <div>
-        <label for="idinvoice_new5">Terms*</label>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new5">Terms*</label></p>
         <input type="text" id="idinvoice_new5" name="terms" placeholder="Terms.." required>
-    </div>
 
-    <div>
-        <label for="idinvoice_new6">Due Date*</label>
+    </div>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new6">Due Date*</label></p>
         <input type="date" id="idinvoice_new6" name="due_date" placeholder="Due Date.." required>
+
     </div>
 
-    <div>
-        <label for="idinvoice_new7">SalesPerson*</label>
+    
+
+    <div class="doflex">
+        <p class="name">
+            <label for="idinvoice_new7">SalesPerson*</label>
+        </p>
         <input type="text" id="idinvoice_new7" name="salesperson" placeholder="salesperson" required>
     </div>
 
 
     <div>
-            Subjects <textarea name="subjects" id="" cols="20" rows="1" required></textarea>
+        <p class="name">Subjects</p>
+        <textarea name="subjects"  id="" cols="20" rows="1" required placeholder="Subjects"></textarea>
     </div>
 
-    <div>
-        <label for="idinvoice_new9">Email*</label>
+    <div class="doflex">
+        <p class="name"><label for="idinvoice_new9">Email*</label></p>
         <input type="email" id="idinvoice_new9" name="send_to" placeholder="Email" required>
     
     </div>
 
     <!-- there are lot of options, so leave  -->
-    <div>
-        <button type="submit">Save As Draft</button>
-        <input type="submit" value="Save and Send">
+    <div class="doflex">
+            <p class="names"><input type="submit" value="Save and Send"></p>
+            <p class="names"><input type="submit" value="Save as Draft"></p>
+
+            <button class="btn btn1 leftmargin"><a href="{% url 'invoices' %}">Go To DashBoard</a></button> 
+        
         <!-- <button type="submit">Save and Print</button> -->
         <!-- <button type="submit">Save and Share later</button>  -->
-        <button><a href="{% url 'invoices' %}">Go To DashBoard</a></button> 
     </div>
 </form>
+</div>
 {% endblock element %}
 <!-- <select id="country" name="country">
     <option value="australia">Australia</option>
